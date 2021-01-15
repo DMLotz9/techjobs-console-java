@@ -59,10 +59,10 @@ public class TechJobs {
 
                 // What is their search term?
                 System.out.println("\nSearch term: ");
-                String searchTerm = in.nextLine();
+                String searchTerm = in.nextLine().toLowerCase();
 
                 if (searchField.equals("all")) {
-                    System.out.println("Search all fields not yet implemented.");
+                    printJobs(JobData.findByValue(searchTerm));
                 } else if (JobData.findByColumnAndValue(searchField, searchTerm).isEmpty()) {
                     System.out.println("Sorry, search term not found. Please try again.");
                 } else {
